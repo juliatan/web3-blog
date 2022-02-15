@@ -10,9 +10,20 @@
 
 ## How it was built
 
+### Setup
+
 - Install NextJS and packages.
 - Amend `hardhat.config.js`.
 - Set up global styles and add relevant images to `public` folder.
+
+### Write smart contract and deploy
+
 - Add Blog contract to `contracts` folder.
 - Set up blog tests in `test` folder to check you're happy with the contract.
 - Set up the `deploy.js` script to deploy the contract. Ensure the local network is running using `npx hardhat node`, then deploy using `npx hardhat run scripts/deploy.js --network localhost`.
+- Copy the private key of the first hardhat test account (by default, this is the owner of the contract), and import it to your Metamask extension. Be sure to set the network to localhost 8545.
+
+### NextJS
+
+- Create `.env.local` file in root directory and add `ENVIRONMENT="local"` and `NEXT_PUBLIC_ENVIRONMENT="local"`. This allows us to switch between `local`, `testnet` and `mainnet` environments.
+- Set up `context.js` to manage state across the React app.
