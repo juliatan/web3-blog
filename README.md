@@ -27,3 +27,4 @@
 
 - Create `.env.local` file in root directory and add `ENVIRONMENT="local"` and `NEXT_PUBLIC_ENVIRONMENT="local"`. This allows us to switch between `local`, `testnet` and `mainnet` environments.
 - Set up `context.js` to manage state across the React app.
+- Set up the app's layout in `pages/_app.ts`.
