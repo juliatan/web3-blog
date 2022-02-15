@@ -17,3 +17,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Install NextJS and packages
 - Amend `hardhat.config.js`
 - Set up global styles and add relevant images to `public` folder
+- Add Blog contract to `contracts` folder
