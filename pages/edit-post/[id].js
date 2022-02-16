@@ -5,6 +5,7 @@ import { css } from '@emotion/css'
 import dynamic from 'next/dynamic'
 import { ethers } from 'ethers'
 import { create } from 'ipfs-http-client'
+import Image from 'next/image'
 
 import { contractAddress } from '../../config'
 import Blog from '../../artifacts/contracts/Blog.sol/Blog.json'
@@ -14,7 +15,7 @@ const client = create('https://ipfs.infura.io:5001/api/v0')
 
 const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false })
 
-export default function Post() {
+export default function Post(props) {
   const [post, setPost] = useState(null)
   const [editing, setEditing] = useState(true)
   const router = useRouter()
@@ -98,7 +99,7 @@ export default function Post() {
       )}
       {!editing && (
         <div>
-          {post.coverImagePath && <img src={post.coverImagePath} className={coverImageStyle} />}
+          {post.coverImagePath && <Image alt="cover" src={post.coverImagePath} className={coverImageStyle} />}
           <h1>{post.title}</h1>
           <div className={contentContainer}>
             <ReactMarkdown>{post.content}</ReactMarkdown>

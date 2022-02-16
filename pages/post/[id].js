@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { css } from '@emotion/css'
 import { ethers } from 'ethers'
 import { AccountContext } from '../../context'
+import Image from 'next/image'
 
 /* import contract and owner addresses */
 import { contractAddress, ownerAddress } from '../../config'
@@ -37,7 +38,7 @@ export default function Post({ post }) {
           }
           {
             /* if the post has a cover image, render it */
-            post.coverImage && <img src={post.coverImage} className={coverImageStyle} />
+            post.coverImage && <Image alt="cover" src={post.coverImage} className={coverImageStyle} />
           }
           <h1>{post.title}</h1>
           <div className={contentContainer}>
@@ -70,7 +71,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   }
 }
 

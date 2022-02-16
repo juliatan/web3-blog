@@ -9,6 +9,7 @@ import { create } from 'ipfs-http-client'
 import { contractAddress } from '../config'
 
 import Blog from '../artifacts/contracts/Blog.sol/Blog.json'
+import Image from 'next/image'
 
 /* define the ipfs endpoint */
 const client = create('https://ipfs.infura.io:5001/api/v0')
@@ -18,7 +19,7 @@ const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false }
 
 const initialState = { title: '', content: '' }
 
-function CreatePost() {
+function CreatePost(props) {
   /* configure initial state to be used in the component */
   const [post, setPost] = useState(initialState)
   const [image, setImage] = useState(null)
@@ -91,7 +92,7 @@ function CreatePost() {
 
   return (
     <div className={container}>
-      {image && <img className={coverImageStyle} src={URL.createObjectURL(image)} />}
+      {image && <Image alt="cover" className={coverImageStyle} src={URL.createObjectURL(image)} />}
       <input
         onChange={onChange}
         name="title"

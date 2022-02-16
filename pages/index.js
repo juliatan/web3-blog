@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { ethers } from 'ethers'
 import Link from 'next/link'
 import { AccountContext } from '../context'
+import Image from 'next/image'
 
 /* import contract address and contract owner address */
 import { contractAddress, ownerAddress } from '../config'
@@ -33,7 +34,7 @@ export default function Home(props) {
                 <div className={linkStyle}>
                   <p className={postTitle}>{post[1]}</p>
                   <div className={arrowContainer}>
-                    <img src="/right-arrow.svg" alt="Right arrow" className={smallArrow} />
+                    <Image src="/right-arrow.svg" alt="Right arrow" className={smallArrow} />
                   </div>
                 </div>
               </a>
@@ -47,7 +48,7 @@ export default function Home(props) {
           /* to create the first post */
           <button className={buttonStyle} onClick={navigate}>
             Create your first post
-            <img src="/right-arrow.svg" alt="Right arrow" className={arrow} />
+            <Image src="/right-arrow.svg" alt="Right arrow" className={arrow} />
           </button>
         )}
       </div>

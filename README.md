@@ -30,3 +30,8 @@
 - Set up the app's layout in `pages/_app.ts`.
 - Create `pages/index.tsx` and `pages/create-post.tsx`.
 - Create route to view a post at `/pages/post/:id` and edit a post at `/pages/edit-post/:id`.
+
+### Deploy to Mumbai testnet
+
+- Add to the Mumbai testnet to your Metamask wallet with these [details](https://docs.polygon.technology/docs/develop/network-details/network/).
+- Get some testnet tokens: [https://faucet.polygon.technology/](https://faucet.polygon.technology/)
